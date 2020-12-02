@@ -28,20 +28,47 @@ namespace AdventCode
                 1792,1614,1492,1823,1803,1533,1726,1364
             };
 
-            var result = new List<int>();
+            //var result = new List<int>();
 
-            foreach (int x in listOfnumbers)
+            //foreach (int x in listOfnumbers)
+            //{
+            //    var y = goal - x;
+
+            //    if(y > 0 && listOfnumbers.Contains(y))
+            //    {
+            //        result.Add(y);
+            //    }
+            //}
+
+            //Console.WriteLine((result[0] * result[1]).ToString());
+            //Console.ReadLine();
+
+            //1.2 - 3 numbers now add up to 2020.
+            //Approach: Iterate through array, add 2 numbers together, then subtract from 2020 and look for number
+
+            var firstIndex = 0;
+            var secondIndex = 0;
+
+            while (firstIndex < listOfnumbers.Count-1)
             {
-                var y = goal - x;
-
-                if(y > 0 && listOfnumbers.Contains(y))
+                secondIndex = firstIndex + 1;
+                while (secondIndex < listOfnumbers.Count-1)
                 {
-                    result.Add(y);
-                }
-            }
+                    var sumResult = listOfnumbers[firstIndex] + listOfnumbers[secondIndex];
+                    var intToFind = 2020 - sumResult;
 
-            Console.WriteLine((result[0] * result[1]).ToString());
-            Console.ReadLine();
+                    if (listOfnumbers.Contains(intToFind))
+                    {
+                        Console.WriteLine(intToFind * listOfnumbers[firstIndex] * listOfnumbers[secondIndex]);
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        secondIndex++;
+                    }
+                }
+                firstIndex++;
+            } 
         }
     }
 }
