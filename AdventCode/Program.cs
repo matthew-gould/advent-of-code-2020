@@ -7,6 +7,7 @@ namespace AdventCode
     {
         static void Main(string[] args)
         {
+            #region setup for problem 1
             //1.1 --> Not the most efficient solution big O-wise.
             int goal = 2020;
             var listOfnumbers = new List<int>()
@@ -28,6 +29,9 @@ namespace AdventCode
                 1792,1614,1492,1823,1803,1533,1726,1364
             };
 
+            #endregion
+
+            #region problem 1.2
             //var result = new List<int>();
 
             //foreach (int x in listOfnumbers)
@@ -43,6 +47,9 @@ namespace AdventCode
             //Console.WriteLine((result[0] * result[1]).ToString());
             //Console.ReadLine();
 
+            #endregion
+
+            #region problem 1.2
             //1.2 - 3 numbers now add up to 2020.
             //Approach: Iterate through array, add 2 numbers together, then subtract from 2020 and look for number
 
@@ -68,7 +75,9 @@ namespace AdventCode
                     }
                 }
                 firstIndex++;
-            } 
+            }
+
+            #endregion
         }
     }
 }
